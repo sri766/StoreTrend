@@ -1,0 +1,31 @@
+.products{
+    display: flex;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    margin-top: 70px;
+
+    .left{
+        padding: 10px 50px;
+        font-size: 15px;
+
+        .itemInput{
+            label{
+                font-size: 22px;
+            }
+        }
+    }
+
+    .right{
+        align-items: center;
+        .productItem{
+            margin-bottom: 50px; 
+            .front{
+                height: 300px;
+                // margin: 0 20px;
+                width: calc(100vw - 400px);
+                object-fit:cover;
+            }
+        }
+    }
+}

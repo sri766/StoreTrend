@@ -1,0 +1,64 @@
+.categories{
+    display: flex;
+    margin: 5px;
+    height: 80vh;
+    
+    .col{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .col-l{
+        flex: 2;
+    }
+    
+    .buttonLink{
+        text-decoration: none;
+        color: black;
+        
+        &:hover{
+            color: white;
+        }
+    }
+    button{
+        position: absolute;
+        padding: 10px;
+        text-align: center;
+        max-width: 150px;
+        height: 50px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        font-size: 20px;
+        text-transform: uppercase;
+        cursor: pointer;
+        background-color: white;
+        border: none;
+
+
+        &:hover{
+            background-color: rgba(9, 95, 138, 0.243);
+            border: 2px solid rgba(199, 198, 198, 0.243);
+        }
+    }
+    .row{
+        flex:1;
+        display: flex;
+        height: 40vh;
+        object-fit: cover;
+        position:  relative;
+
+
+        img{
+            width: 100%;
+            overflow: hidden;
+            .image6{
+                width: 50vw;
+            }
+        }
+    }
+    
+}

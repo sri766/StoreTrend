@@ -2,7 +2,7 @@
     display: flex;
     margin: 5px;
     height: 80vh;
-    
+    margin: 5px 40px 5px 10px;
     .col{
         flex: 1;
         display: flex;
@@ -50,6 +50,7 @@
         height: 40vh;
         object-fit: cover;
         position:  relative;
+    
 
 
         img{

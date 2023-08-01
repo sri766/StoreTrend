@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useLayoutEffect, useState } from 'react'
 import React from 'react'
 import './Product.scss'
 
@@ -7,37 +7,69 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import BalanceIcon from '@mui/icons-material/Balance';
 
+//hooks
+import { useParams } from 'react-router-dom';
+import useFetch from '../../hooks/useFetch';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../redux/cartReducer';
+
 const Product = () => {
-
-  const [selected, setSelected] = useState(0)
+  const params = useParams().id;
+  const [selected, setSelected] = useState("img")
   const [quantity, setQuantity] = useState(1)
+  const dispatch = useDispatch();
 
-  const images =[
-    "/images/product1.jpg",
-    "/images/product2.jpg",
-  ]
+  const {data,loading,error} = useFetch(`/products/${params}?populate=*`)
+  
+
+  console.log(data);
+
   return (
     <div className='product'>
-      <div className='left'>
+      {loading ? 
+      (
+        "Loading..."
+      ) :(
+        <>
+          <div className='left'>
         <div className="images">
-          <img className="image" src={images[0]} alt="" onClick={e=> setSelected(0)}/>
-          <img className="image" src={images[1]} alt="" onClick={e=> setSelected(1)}/>
+          <img 
+          className="image" 
+          src={
+            process.env.REACT_APP_UPLOAD_URL + 
+            data?.attributes.img.data.attributes.url
+          }
+             alt="image1" onClick={e=> setSelected("img")}/>
+          <img 
+          className="image" 
+          src={
+            process.env.REACT_APP_UPLOAD_URL +
+            data?.attributes.img2.data.attributes.url
+          } 
+            alt="image2" onClick={e=> setSelected("img2")}/>
         </div>
         <div className="mainImg">
-          <img src={images[selected]} alt="" />
+          <img src={data?.attributes[selected].data.attributes.url} alt="" />
         </div>
       </div>
       <div className="right">
-        <h1>Title</h1>
-        <span>$199</span>
+        <h1>{data?.attributes?.title}</h1>
+        <span>{data?.attributes?.price}</span>
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet, unde! Cupiditate perferendis voluptas omnis? Quaerat, corporis eos? Modi dolores dolorum maxime, totam, molestias alias libero deleniti asperiores earum quam enim!
+          {data?.attributes?.desc}
         </p>
         <div className='quantity'>
           <button className="qnt" onClick={()=> setQuantity(prev => prev === 1? 1 : prev - 1)}>-</button>
           <span>{quantity}</span>
           <button className="qnt" onClick={()=> setQuantity((prev) => prev + 1 )}>+</button>
-          <button className='add'>
+          <button className='add' onClick={()=> dispatch(addToCart({
+            id: data?.id,
+            title: data?.attributes?.title,
+            img: data?.attributes?.img.data.attributes.url,
+            desc: data?.attributes?.desc,
+            newprice: data?.attributes?.price,
+            quantity
+          }))}>
             <AddShoppingCartIcon/> 
             <span>ADD TO CART</span>
           </button>
@@ -64,6 +96,8 @@ const Product = () => {
           </div>
         </div>
       </div>
+        </>
+      )}
     </div>
   )
 }

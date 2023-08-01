@@ -21,7 +21,7 @@ const useFetch = (url)=>{
                 },
               }
             );
-            setData(res.data.data);
+            setData(res.data.data); 
           } catch (err) {
             setError(true);
           }

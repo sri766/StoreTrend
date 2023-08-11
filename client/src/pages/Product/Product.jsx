@@ -1,4 +1,4 @@
-import { useLayoutEffect, useState } from 'react'
+import { useState } from 'react'
 import React from 'react'
 import './Product.scss'
 
@@ -21,8 +21,9 @@ const Product = () => {
 
   const {data,loading,error} = useFetch(`/products/${params}?populate=*`)
   
+  
+  // console.log(data);
 
-  console.log(data);
 
   return (
     <div className='product'>
@@ -49,7 +50,8 @@ const Product = () => {
             alt="image2" onClick={e=> setSelected("img2")}/>
         </div>
         <div className="mainImg">
-          <img src={data?.attributes[selected].data.attributes.url} alt="" />
+          <img src={process.env.REACT_APP_UPLOAD_URL +
+            data?.attributes[selected].data?.attributes?.url} alt="mainImg" />
         </div>
       </div>
       <div className="right">

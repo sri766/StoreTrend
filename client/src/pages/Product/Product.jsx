@@ -20,10 +20,6 @@ const Product = () => {
   const dispatch = useDispatch();
 
   const {data,loading,error} = useFetch(`/products/${params}?populate=*`)
-  
-  
-  // console.log(data);
-
 
   return (
     <div className='product'>

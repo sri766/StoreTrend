@@ -17,16 +17,17 @@
             }
         }
         .mainImg{
-            flex: 5;
+            flex: 3;
             img{
                 margin: 0px 10px;
-                width: 600px;
-                height: 700px;
+                width: 500px;
+                height: 600px;
                 object-fit: cover;
             }
         }
     }
     .right{
+        flex: 1;
         padding: 10px;
 
         h1{

@@ -17,14 +17,14 @@ const Cart = () => {
       products.forEach((item) => (total += item.newprice * item.quantity));
       return total.toFixed(2);
     }
+    console.log(products);
   return (
     <div className='cart'>
       <h1>Product in your cart</h1>
       
       {products?.map((item) => (
         <div className="item" key={item.id}> 
-            <img src={process.env.REACT_APP_UPLOAD_URL +
-            item?.attributes?.img?.data?.attributes?.url} alt={item.title} />
+            <img src={process.env.REACT_APP_UPLOAD_URL + item.img} style={{border:"1px solid black"}}alt={item.title} />
             <div className="details">
                 <h1>{item.title}</h1>
                 <p>{item.desc}</p>

@@ -4,20 +4,40 @@ import './Cart.scss'
 import { useSelector } from 'react-redux';
 import { removeItem, resetCart } from '../../redux/cartReducer';
 import { useDispatch } from 'react-redux';
-
+import {loadStripe} from '@stripe/stripe-js';
+import {makeRequest} from "../../makeRequest"
 
 const Cart = () => {
 
     const products = useSelector((state) => state.cart.products);
     const dispatch = useDispatch();
 
+    const stripePromise = loadStripe('pk_test_51NZYPESIKStFTMXr4kRAhHMcIMwZILZ6cy4cg0I7KQ8zZ1XMrANToXQc6pI1VSAOAoymMUOtnlxXtW6VOA9zCsF900ZpZyxPR0');
+
+    const handlePayment = async() =>{
+      try{
+
+        const stripe = await stripePromise;
+
+        const res = await makeRequest.post('/orders',{
+          products,
+        });
+
+        await stripe.redirectToCheckout({
+          sessionId: res.data.stripeSession.id,
+        });
+        
+      }catch(err){
+        console.log(err);
+      }
+    }
 
     const totalPrice = () =>{
       let total = 0;
       products.forEach((item) => (total += item.newprice * item.quantity));
       return total.toFixed(2);
     }
-    console.log(products);
+
   return (
     <div className='cart'>
       <h1>Product in your cart</h1>
@@ -37,7 +57,7 @@ const Cart = () => {
         <span>SUBTOTAL</span>
         <span>Rs.{totalPrice()}</span>
       </div>
-      <button>PROCEED TO CHECKOUT</button>
+      <button onClick={handlePayment}>PROCEED TO CHECKOUT</button>
       <span className="reset" onClick={()=>dispatch(resetCart())}>Reset</span>
     </div>
   )

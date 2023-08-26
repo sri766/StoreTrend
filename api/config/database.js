@@ -1,3 +1,24 @@
+require('dotenv').config();
+
+module.exports = ({ env }) => ({
+  defaultConnection: "default",
+  connections: {
+    default: {
+      connector: "bookshelf",
+      settings: {
+        client: "mysql",
+        host: env("DATABASE_HOST", "localhost"),
+        port: env.int("DATABASE_PORT", 3306),
+        database: env("DATABASE_NAME", "shopify"),
+        username: env("DATABASE_USERNAME", "root"),
+        password: env("DATABASE_PASSWORD", "srisanth"),
+      },
+      options: {
+        ssl: true, // Set this to true if your PostgreSQL instance requires SSL
+      },
+    },
+  },
+});
 const path = require('path');
 
 module.exports = ({ env }) => {

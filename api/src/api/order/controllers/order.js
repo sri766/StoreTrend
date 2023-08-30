@@ -1,5 +1,7 @@
 ("use strict");
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY, { apiVersion: "2020-08-27" });
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY, 
+  { apiVersion: "2020-08-27" }
+);
 
 
 /**
@@ -24,7 +26,7 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
               product_data: {
                 name: item.title,
               },
-              unit_amount: Math.round(item.price),
+              unit_amount: Math.round(item.price)*100,
             },
             quantity: product.quantity,
           };

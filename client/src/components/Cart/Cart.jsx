@@ -50,7 +50,7 @@ const Cart = () => {
                 <p>{item.desc}</p>
                 <div className='price'>{item.quantity} x {item.newprice}</div>
             </div>
-            <DeleteIcon className='delete' onClick={()=>dispatch(removeItem(item.id))}/>
+            <DeleteIcon className='delete' onClick={()=>dispatch(removeItem({id:item.id}))}/>
         </div>
       ))}
       <div className="total"> 

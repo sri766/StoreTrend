@@ -3,8 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
 body {
   font-family: 'Poppins', sans-serif;
-  /* background-image: linear-gradient(to right, #c81b97d1 0%, #001233 70%); */
-  background-image: url('../public/images/bg.jpg');
+  background-image: linear-gradient(to right, #c81b97d1 0%, #001233 70%);
+  /* background-image: url('../public/images/bg.jpg'); */
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;

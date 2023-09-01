@@ -10,11 +10,11 @@ const Slider = () => {
   const [currSlide, setCurrSlide] = useState(0);
 
   const prevSlide = () => {
-    setCurrSlide(currSlide === 0 ? 5 : (prev) => prev - 1);
+    setCurrSlide(currSlide === 0 ? 4 : (prev) => prev - 1);
   }
 
   const nextSlide = () => {
-    setCurrSlide(currSlide === 5 ? 0 : (prev) => prev + 1);
+    setCurrSlide(currSlide === 4 ? 0 : (prev) => prev + 1);
   }
   return (
     <div className='slider'>
@@ -31,7 +31,7 @@ const Slider = () => {
       </div>
       <div className="container" style={{transform:`translateX(-${currSlide * 100}vw)` }}>
         <img src="/images/sliderImg1.png" alt="image1" />
-        <img src="/images/sliderImg2.png" alt="image2" />
+        {/* <img src="/images/sliderImg2.png" alt="image2" /> */}
         <img src="/images/sliderImg3.png" alt="image3"/>
         <img src="/images/sliderImg4.png" alt="image4" />
         <img src="/images/sliderImg5.png" alt="image5" />

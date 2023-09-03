@@ -8,13 +8,15 @@ import Categories from '../../components/Categories/Categories'
 import Contact from '../../components/Contact/Contact'
 const Home = () => {
   return (
-    <div className="home">
-      <Slider />
-      <Featured type="featured"/>
-      <Categories />
-      <Featured type="Trending"/>
-      <Contact />
-    </div>
+    <>
+      <div className="home">
+        <Slider />
+        <Featured type="featured"/>
+        <Categories />
+        <Featured type="Trending"/>
+        <Contact />
+      </div>
+    </>
   )
 }
 

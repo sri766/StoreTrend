@@ -2,6 +2,7 @@
     padding: 20px 50px;
     display: flex;
     gap: 50px;
+    color: black;
     margin-top: 70px;
     .left{
         flex:1;
@@ -41,8 +42,8 @@
                 font-weight: 600;
             }
             .qnt{
-                background-color: white;
-                border: 1px solid #000;
+                background-color: rgb(255, 255, 255);
+                border: 2px solid #000;
                 border-radius: 10px;
                 margin: 0px 5px 0px 5px;
                 padding : 10px 20px;
@@ -52,21 +53,22 @@
             }
 
             .add{
-                margin: 10px 0px;
+                margin: 20px 0px;
                 background-color: rgba(133, 133, 133, 0.234);
-                color: white;
+                color: rgb(0, 0, 0);
                 border: none;
                 border-radius: 10px;
                 padding: 10px 20px;
                 cursor: pointer;
-                font-size: 14px;
-                font-weight: 600;
+                font-size: 1rem;
+                font-weight: 400;
                 display: flex;
                 justify-content: center;
                 align-items: center;
 
                 &:hover{
                     background-color: rgba(0, 55, 255, 0.821);
+                    color: white;
                 }
             }
 
@@ -75,12 +77,13 @@
                 gap: 10px;
                 .item{
                     margin: 10px 0px;
-                    background-color: white;
+                    background-color: rgb(255, 255, 255);
                     color: blue;
                     border: none;
                     border-radius: 10px;
                     padding: 10px 20px;
                     cursor: pointer;
+                    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.145);
                     font-size: 16px;
                     font-weight: 200;
                     display: flex;

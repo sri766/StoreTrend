@@ -1,12 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
-
 body {
-  font-family: 'outfit', sans-serif;
-  margin: 0;
-  padding: 0;
-  /* background-image: url("../public/images/back1.jpg"); */
+  font-family: 'Poppins', sans-serif;
+  background-image: url("../public/images/back1.jpg");
 
   /* Set a specific height */
   min-height: 500px; 
@@ -17,6 +14,5 @@ body {
   background-size: cover;
   color: white;
   overflow-x: hidden;
-  box-sizing: border-box;
 }
  

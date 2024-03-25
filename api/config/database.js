@@ -11,7 +11,7 @@ module.exports = ({ env }) => ({
         port: env.int("DATABASE_PORT", 3306),
         database: env("DATABASE_NAME", "shopify"),
         username: env("DATABASE_USERNAME", "root"),
-        password: env("DATABASE_PASSWORD", "srisanth"),
+        password: env("DATABASE_PASSWORD", "Sri@2003"),
       },
       options: {
         ssl: true, // Set this to true if your PostgreSQL instance requires SSL

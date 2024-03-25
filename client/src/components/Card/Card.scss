@@ -1,60 +1,62 @@
-.Card{
+.Link{
+    text-decoration: none;
+    .Card{
 
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    
-    h2{
-        text-decoration: none;
-        color: white;
-        font-size: 20px;
-    }
-
-    .prices{
-        text-decoration: none;
-        color: white;
+        width: 300px;
         display: flex;
+        flex-direction: column;
         gap: 10px;
-
-        h3{
-            font-size: 16px;
-            font-weight: 500;
+        
+        h2{
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            font-size: 20px;
+        }
+    
+        .prices{
+            color: rgb(0, 0, 0);
+            display: flex;
+            gap: 10px;
             
-            &:first-child{
-                text-decoration: line-through;
+            h3{
+                font-size: 1rem;
+                font-weight: 500;
+                
+                &:first-child{
+                    text-decoration: line-through;
+                }
+                &:second-child{
+                    text-decoration: none;
+                }
+            
             }
-            &:second-child{
-                text-decoration: none;
-            }
-        
         }
-    }
-
-    .img{
-        width: 100%;
-        height: 400px;
-        overflow: hidden;
-        position: relative;
-        border: 1px solid white;
-        
-        img{
+    
+        .img{
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 999;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid white;
+            
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: 999;
+            }
+         
+    
+            span{
+                position: absolute;
+                top: 0;
+                left: 0;
+                color: teal;
+                background-color: white;
+                opacity: 0.9;
+                margin: 10px 5px;
+            }
         }
-     
-
-        span{
-            position: absolute;
-            top: 0;
-            left: 0;
-            color: teal;
-            background-color: white;
-            opacity: 0.9;
-            margin: 10px 5px;
-        }
+    
     }
-
 }

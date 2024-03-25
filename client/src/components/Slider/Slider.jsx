@@ -31,12 +31,10 @@ const Slider = () => {
       </div>
       <div className="container" style={{transform:`translateX(-${currSlide * 100}vw)` }}>
         <img src="/images/sliderImg1.png" alt="image1" />
-        {/* <img src="/images/sliderImg2.png" alt="image2" /> */}
         <img src="/images/sliderImg3.png" alt="image3"/>
         <img src="/images/sliderImg4.png" alt="image4" />
         <img src="/images/sliderImg5.png" alt="image5" />
         <img src="/images/sliderImg6.png" alt="image6"/>
-        
       </div>
       <div className="icons">
         <div className="icon" onClick={prevSlide}>

@@ -5,7 +5,6 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Categories = () => {
 
-  
   return (
     <div className='categories'>
       <div className="col">

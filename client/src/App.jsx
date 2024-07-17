@@ -9,6 +9,12 @@ import Products from './pages/Products/Products';
 import Product from './pages/Product/Product';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
+import LocomotiveScroll from 'locomotive-scroll';
+
+const scroll = new LocomotiveScroll({
+  el: document.querySelector('[data-scroll-container]'),
+  smooth: true,
+});
 
 
 const Layout = () => {
@@ -38,7 +44,7 @@ const route = createBrowserRouter([
 
 function App() {
   return (
-    <RouterProvider router={route} />
+    <RouterProvider router={route} data-scroll/>
   );
 }
 
